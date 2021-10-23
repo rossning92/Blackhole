@@ -122,6 +122,7 @@ int main(int, char **) {
     return 1;
   }
 
+  if (0)
   {
     // Enable the debugging layer of OpenGL
     //

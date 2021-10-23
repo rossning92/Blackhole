@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 2.7)
 
-
-set(PROJECT_NAME main)
-
-project(${PROJECT_NAME})
+project(Blackhole)
 
 find_package(imgui CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
@@ -14,20 +11,28 @@ find_path(STB_INCLUDE_DIRS "stb.h")
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${GLFW_INCLUDE_DIR})
 
-file(GLOB SRC_FILES
-    "${PROJECT_SOURCE_DIR}/*.h"
-    "${PROJECT_SOURCE_DIR}/*.cpp"
-    "${PROJECT_SOURCE_DIR}/*.c"
-    "${PROJECT_SOURCE_DIR}/*.cc"
-)
+file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/*.h"
+     "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.c"
+     "${PROJECT_SOURCE_DIR}/src/*.cc")
 
-add_executable(main
-    ${SRC_FILES}
-)
+add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})
 
-target_link_libraries(main PRIVATE imgui::imgui)
-target_link_libraries(main PRIVATE glfw)
-target_link_libraries(main PRIVATE GLEW::GLEW)
-target_link_libraries(main PRIVATE glm)
-target_include_directories(main PRIVATE ${STB_INCLUDE_DIRS})
-target_compile_features(main PRIVATE cxx_std_17)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE imgui::imgui)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE glfw)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE GLEW::GLEW)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE glm)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${STB_INCLUDE_DIRS})
+target_compile_features(${CMAKE_PROJECT_NAME} PRIVATE cxx_std_17)
+
+# Copy assets files after build.
+add_custom_command(
+  TARGET ${CMAKE_PROJECT_NAME}
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/assets"
+          "$<TARGET_FILE_DIR:${CMAKE_PROJECT_NAME}>/assets")
+
+add_custom_command(
+  TARGET ${CMAKE_PROJECT_NAME}
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/shader/"
+          "$<TARGET_FILE_DIR:${CMAKE_PROJECT_NAME}>/shader")
