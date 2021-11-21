@@ -11,7 +11,7 @@ _(WIP: refactoring, cleaning up and documenting the code)_
   - glew
   - glfw3
   - glm
-  - imgui[opengl3-gl3w-binding]
+  - imgui
   - stb
 
 ### For windows setup only
@@ -23,7 +23,7 @@ _(WIP: refactoring, cleaning up and documenting the code)_
   - Build vcpkg: `bootstrap-vcpkg && vcpkg integrate install`
 - Install required C++ libs from vcpkg (I've only tested x64 build):
   ```
-  vcpkg install glew:x64-windows glfw3:x64-windows glm:x64-windows imgui[opengl3-gl3w-binding]:x64-windows stb:x64-windows
+  vcpkg install glew:x64-windows glfw3:x64-windows glm:x64-windows imgui:x64-windows stb:x64-windows
   ```
 
 ## Build the code
