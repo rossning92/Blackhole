@@ -26,7 +26,7 @@ _(WIP: refactoring, cleaning up and documenting the code)_
   vcpkg install glew:x64-windows glfw3:x64-windows glm:x64-windows imgui:x64-windows stb:x64-windows
   ```
 
-## Build the code
+#### Build the code
 
 ```bash
 # Configure the project and generate a native build system. Please replace <vcpkg_dir> with the actual path to your vcpkg folder.
@@ -35,5 +35,17 @@ cmake -DCMAKE_TOOLCHAIN_FILE=<vcpkg_dir>/scripts/buildsystems/vcpkg.cmake -S . -
 # Compile / build the project
 cmake --build build
 ```
+
+### Linux setup and build
+
+- Install CMake and Conan using your distribution's package manager[^1]
+- Clone this repo: `git clone https://github.com/rossning92/Blackhole.git`
+- Enter this repo's directory `cd Blackhole`
+- Make a build directory: `mkdir build`
+- Enter the build directory: `cd build`
+- Prepare CMake: `cmake .. -DCMAKE_BUILD_TYPE=Release`
+- Build: `make`
+
+[^1]: You might need to configure [$HOME/.conan/conan.conf](https://docs.conan.io/en/latest/reference/config_files/conan.conf.html) and Conan [profiles](https://docs.conan.io/en/latest/reference/profiles.html) if the `default profile` is not generated due to different build environments on your distribution.
 
 ## Acknowledgements
