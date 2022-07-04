@@ -58,13 +58,13 @@ GLuint createFramebuffer(const FramebufferCreateInfo &info) {
 GLuint createQuadVAO() {
   std::vector<glm::vec3> vertices;
 
-  vertices.push_back(glm::vec3(-1, -1, 0));
-  vertices.push_back(glm::vec3(-1, 1, 0));
-  vertices.push_back(glm::vec3(1, 1, 0));
+  vertices.emplace_back(-1, -1, 0);
+  vertices.emplace_back(-1, 1, 0);
+  vertices.emplace_back(1, 1, 0);
 
-  vertices.push_back(glm::vec3(1, 1, 0));
-  vertices.push_back(glm::vec3(1, -1, 0));
-  vertices.push_back(glm::vec3(-1, -1, 0));
+  vertices.emplace_back(1, 1, 0);
+  vertices.emplace_back(1, -1, 0);
+  vertices.emplace_back(-1, -1, 0);
 
   // Create VBO
   GLuint vao;
