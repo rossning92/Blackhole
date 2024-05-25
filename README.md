@@ -1,14 +1,12 @@
 # Real-time Black Hole Rendering in OpenGL
 ![Screenshot](docs/blackhole-screenrecord.gif)
 
-## Build the code
+## Build & Run
 ```
-sudo apt install -y libgl1-mesa-dev libglew-dev libxkbcommon-dev libx11-dev libwayland-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev build-essential cmake pkg-config
-cd Blackhole
-git submodule update --init --recursive
-mkdir build && cd build
-cmake .. && make -j$(( $(nproc) - 1 ))
+./Blackhole.sh build
+./Blackhole.sh run
 ```
+
 
 ## Acknowledgements
 **Papers**
