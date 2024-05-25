@@ -3,20 +3,14 @@
 ![Screenshot](docs/blackhole-screenrecord.gif)
 
 ## Prerequisite
-
 - [cmake](https://cmake.org/)
-- [conan](https://conan.io/) package manager [^1]
-
-[^1]: You might need to configure [$HOME/.conan/conan.conf](https://docs.conan.io/en/latest/reference/config_files/conan.conf.html) and Conan [profiles](https://docs.conan.io/en/latest/reference/profiles.html) if the `default profile` is not generated due to different build environments on your distribution.
 
 ## Build the code
-
-```bash
-# Configure the project and generate a native build system.
-cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
-
-# Compile / build the project.
-cmake --build build
+```
+sudo apt install -y cmake
+git submodule update --init --recursive
+mkdir build && cd build
+cmake .. & make -j$(( $(nproc) - 1 ))
 ```
 
 ## Acknowledgements
