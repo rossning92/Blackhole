@@ -3,7 +3,7 @@
 
 ## Build the code
 ```
-sudo apt install -y libgl1-mesa-dev libglew-dev libxkbcommon-dev libx11-dev build-essential cmake
+sudo apt install -y libgl1-mesa-dev libglew-dev libxkbcommon-dev libx11-dev libwayland-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev build-essential cmake
 cd Blackhole
 git submodule update --init --recursive
 mkdir build && cd build
