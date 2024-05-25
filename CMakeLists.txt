@@ -20,9 +20,9 @@ file(GLOB SRC_FILES
   "${PROJECT_SOURCE_DIR}/thirdparty/imgui/*.cpp"
   "${PROJECT_SOURCE_DIR}/src/*.cc")
   
-  add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})
+add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})
   
-  target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE 
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE 
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui
 )

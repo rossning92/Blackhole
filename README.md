@@ -7,6 +7,7 @@
 
 ## Build the code
 ```
+sudo apt install libgl1-mesa-dev libglew-dev
 sudo apt install -y cmake
 git submodule update --init --recursive
 mkdir build && cd build
