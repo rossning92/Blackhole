@@ -22,12 +22,12 @@
 #include <glm/gtx/euler_angles.hpp>
 #include <imgui.h>
 
-#include "GLDebugMessageCallback.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-#include "render.h"
-#include "shader.h"
-#include "texture.h"
+#include <GLDebugMessageCallback.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
+#include <render.h>
+#include <shader.h>
+#include <texture.h>
 
 static const int SCR_WIDTH = 1920;
 static const int SCR_HEIGHT = 1080;
