@@ -3,10 +3,11 @@
 
 ## Build the code
 ```
-sudo apt install -y libgl1-mesa-dev libglew-dev build-essential cmake
+sudo apt install -y libgl1-mesa-dev libglew-dev libxkbcommon-dev libx11-dev build-essential cmake
+cd Blackhole
 git submodule update --init --recursive
 mkdir build && cd build
-cmake .. & make -j$(( $(nproc) - 1 ))
+cmake .. && make -j$(( $(nproc) - 1 ))
 ```
 
 ## Acknowledgements
