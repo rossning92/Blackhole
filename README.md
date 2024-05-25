@@ -34,6 +34,6 @@ cmake .. && make -j$(( $(nproc) - 1 ))
 - https://github.com/ssloy/tinyraytracer
 - https://github.com/RayTracing/raytracing.github.io
 - https://awesomeopensource.com/projects/raytracing
-- Ray-traced simulation of a black hole - https://github.com/oseiskar/black-hole
-- Raytracing a blackhole - https://rantonels.github.io/starless/
+- https://github.com/oseiskar/black-hole
+- https://rantonels.github.io/starless/
 - https://github.com/rantonels/schwarzschild
