@@ -5,9 +5,10 @@
 ## Prerequisite
 
 - [cmake](https://cmake.org/)
-- [conan](https://conan.io/) package manager [^1]
+- [conan](https://conan.io/) package manager [^1][^2]
 
 [^1]: You might need to configure [$HOME/.conan/conan.conf](https://docs.conan.io/en/latest/reference/config_files/conan.conf.html) and Conan [profiles](https://docs.conan.io/en/latest/reference/profiles.html) if the `default profile` is not generated due to different build environments on your distribution.
+[^2]: Conan 1.xx instead of conan 2.xx or higher is suggested in order to avoid unnecessary problems.
 
 ## Build the code
 
